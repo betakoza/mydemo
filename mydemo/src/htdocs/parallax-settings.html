@@ -1,0 +1,45 @@
+@@include('./-head.html')
+<body>
+  
+  <div class="intro-text">
+    <h1>Parallax: Custom Settings</h1>
+    <h3>Quick Description or Example Code?</h3>
+  </div>
+
+  <article class="example">
+    @@include('./-slides.html')
+    @@include('./-arrows.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="dependencies/parallax.custom.js"></script>
+  <script src="bee3D.js"></script>
+
+  <script>
+    var element = document.querySelector('.example');
+
+    var slider = new Bee3D(element, {
+      effect: 'coverflow',
+      listeners: {
+        keys: true
+      },
+      navigation: {
+        enabled: true
+      },
+      parallax: {
+        enabled: true,
+        friction: 0.5,
+        settings: {
+          scalarX: 9.0,
+          scalarY: 9.0,
+          frictionX: 0.2,
+          frictionY: 0.2
+        }
+      },
+    });
+  </script>
+
+</body>
+</html>

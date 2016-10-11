@@ -1,0 +1,124 @@
+@@include('./-head.html')
+<body>
+  <style>
+    .demo-wrapper {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      bottom: auto;
+      height: 450px;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      width: 48%;
+      float: left;
+      margin: 1%;
+    }
+
+    .example1 {
+      height: 600px;
+      width: 100%;
+      margin: 0 auto;
+      float: none;
+    }
+  </style>
+  
+  <div class="intro-text">
+    <h1>Multiple: Synchronized</h1>
+    <h3>Connect two (or more) sliders, so that their <u>active index</u> is always the same.</h3>
+  </div>
+
+  <article class="demo-wrapper example1">
+    @@include('./-slides.html')
+    @@include('./-arrows.html')
+  </article>
+
+  <article class="demo-wrapper example2">
+    @@include('./-slides.html')
+  </article>
+
+  <article class="demo-wrapper example3">
+    @@include('./-slides.html')
+  </article>
+
+  <article class="demo-wrapper example4">
+    @@include('./-slides.html')
+    @@include('./-arrows.html')
+  </article>
+
+  <article class="demo-wrapper example5">
+    @@include('./-slides.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="dependencies/parallax.custom.js"></script>
+  <script src="bee3D.js"></script>  
+
+  <script>
+    var example1 = document.querySelector('.example1'),
+      example2 = document.querySelector('.example2'),
+      example3 = document.querySelector('.example3'),
+      example4 = document.querySelector('.example4'),
+      example5 = document.querySelector('.example5');
+
+    var slider1 = new Bee3D(example1, {
+      effect: 'carousel',
+      listeners: {
+        touches: true
+      },
+      shadows: { enabled: true },
+      parallax: { enabled: true },
+      navigation: { enabled: true },
+      sync: {
+        enabled: true,
+        targets: ['slider2', 'slider3', 'slider4', 'slider5']
+      }
+    });
+
+    var slider2 = new Bee3D(example2, {
+      effect: 'classic',
+      listeners: { drag: true },
+      shadows: { enabled: true },
+      sync: {
+        enabled: true,
+        targets: ['slider1', 'slider3', 'slider4', 'slider5']
+      }
+    });
+
+    var slider3 = new Bee3D(example3, {
+      effect: 'coverflow',
+      listeners: { keys: true },
+      parallax: { enabled: true },
+      loop: { enabled: true },
+      sync: {
+        enabled: true,
+        targets: ['slider1', 'slider2', 'slider4', 'slider5']
+      }
+    });
+
+    var slider4 = new Bee3D(example4, {
+      effect: 'spiral-left',
+      navigation: { enabled: true },
+      shadows: { enabled: true },
+      sync: {
+        enabled: true,
+        targets: ['slider1', 'slider2', 'slider3', 'slider5']
+      }
+    });
+
+    var slider5 = new Bee3D(example5, {
+      effect: 'concave',
+      loop: { enabled: true },
+      autoplay: { enabled: true },
+      shadows: { enabled: true },
+      sync: {
+        enabled: true,
+        targets: ['slider1', 'slider2', 'slider3', 'slider4']
+      }
+    });
+  </script>
+
+</body>
+</html>

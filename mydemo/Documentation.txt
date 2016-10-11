@@ -1,0 +1,24 @@
+Welcome to Bee3D!
+
+All production-ready files can be found inside the "build" directory.
+All development/source files can be found inside the "src" directory.
+
+Detailed Documentation can be found online at: 	  https://github.com/lukeed/bee3d/wiki
+Helpful Support can be found at: 	https://github.com/lukeed/bee3d/issues
+
+Note: Please do not use the CodeCanyon comments area for help! 
+GitHub allows me to respond to you faster.
+And others will be able to view the help you received, which allows their questions to also be answered!
+
+
+
+Developers' Quick Start:
+
+1. Open Terminal
+2. Navigation to your installation: `cd path/to/bee3D/folder`
+3. Install NPM modules: `npm install`
+	(Note: You must have Node installed)
+4. Run Gulp in Watch-mode: `gulp`
+
+For more information on getting started, please visit:	https://github.com/lukeed/bee3d/wiki/Development
+

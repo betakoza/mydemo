@@ -1,0 +1,39 @@
+@@include('./-head.html')
+<body>
+
+  <div class="intro-text">
+    <h1>Callback: Change</h1>
+    <h3>Run a function after each slide change.</h3>
+  </div>
+
+  <article class="example">
+    @@include('./-slides.html')
+    @@include('./-arrows.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="bee3D.js"></script>
+
+  <script>
+    var element = document.querySelector('.example');
+
+    var slider = new Bee3D(element, {
+      effect: 'concave',
+      listeners: {
+        keys: true
+      },
+      navigation: {
+        enabled: true
+      },
+      onChange: function(event){
+        console.log( 'this is currently active slide index: ', event.index );
+        console.log( 'this is currently active slide DOM element: ', event.slide );
+        alert('Custom onChange callback function! \nCheck the console log for more information!');
+      }
+    });
+  </script>
+
+</body>
+</html>

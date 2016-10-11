@@ -1,0 +1,68 @@
+@@include('./-head.html')
+<body>
+  <style>
+  	.custom--shadow-wrapper {
+  		position: absolute;
+  		z-index: -1;
+  		left: 0;
+  		width: 100%;
+  		height: 100px;
+  	}
+  	.custom--shadow span {
+  		display: block;
+  		content: '';
+  		left: 0;
+  		width: 100%;
+  		height: 200px;
+  		border-radius: 50%;
+  		background: #f36f56;
+  		box-shadow: 0 0 10px 50px #f36f56;
+  		-webkit-transition: opacity 1.5s;
+  		transition: opacity 1.5s;
+  		opacity: 0.4;
+  		-webkit-transform: rotateX(95deg) translateZ(30px) scale(.55);
+  		transform: rotateX(95deg) translateZ(30px) scale(.55);
+  	}
+  </style>
+  
+  <div class="intro-text">
+    <h1>Shadows: Custom Template</h1>
+    <h3>Quick Description or Example Code?</h3>
+  </div>
+
+  <article class="example">
+    @@include('./-slides.html')
+    @@include('./-arrows.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="bee3D.js"></script>
+
+  <script>
+    var element = document.querySelector('.example');
+
+    var slider = new Bee3D(element, {
+      effect: 'wave',
+      listeners: {
+        keys: true
+      },
+      navigation: {
+        enabled: true
+      },
+      shadows: {
+        enabled: true,
+        template: [
+        	'<div class="custom--shadow-wrapper">',
+		        '<div class="custom--shadow">',
+		        	'<span></span>',
+		        '</div>',
+	      	'</div>'
+	    ].join('')
+      }
+    });
+  </script>
+
+</body>
+</html>

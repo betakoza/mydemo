@@ -1,0 +1,31 @@
+// #
+// # Doc Styles
+// ################
+
+html
+	box-sizing: border-box
+	+selection($green, .60)
+	height: 100%
+
+*
+	&,
+	&:before,
+	&:after
+		box-sizing: inherit
+
+body
+	overflow-x: hidden
+	font-family: $base-font-family
+	font-weight: $base-font-weight
+	+outer-container(100%)
+	+font-smoothing
+	height: 100%
+
+	&.lock-scroll
+		overflow-y: hidden
+
+img
+	display: block
+	max-width: 100%
+	user-select: none
+	pointer-events: none

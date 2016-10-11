@@ -1,0 +1,30 @@
+@@include('./-head.html')
+<body>
+  
+  <div class="intro-text">
+    <h1>Interactions: Click to Activate</h1>
+    <h3>Click on an <u>inactive slide</u> to activate it.</h3>
+  </div>
+
+  <article class="example">
+    @@include('./-slides.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="bee3D.js"></script>
+
+  <script>
+    var element = document.querySelector('.example');
+
+    var slider = new Bee3D(element, {
+      effect: 'classic',
+      listeners: {
+        clicks: true
+      }
+    });
+  </script>
+
+</body>
+</html>

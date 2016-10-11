@@ -1,0 +1,31 @@
+@@include('./-head.html')
+<body>
+  
+  <div class="intro-text">
+    <h1>Autoplay: Pause on Hover</h1>
+    <h3>Autoplay's internal timer will <u>pause</u> when the <u>active slide</u> is hovered.</h3>
+  </div>
+
+  <article class="example">
+    @@include('./-slides.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="bee3D.js"></script>
+
+  <script>
+    var element = document.querySelector('.example');
+
+    var slider = new Bee3D(element, {
+      effect: 'concave',
+      autoplay: {
+      	enabled: true,
+        pauseHover: true
+      }
+    });
+  </script>
+
+</body>
+</html>

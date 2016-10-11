@@ -1,0 +1,83 @@
+// #
+// # Demo Styles
+// # -- NOT NECESSARY FOR BEE3D SLIDER TO WORK
+// ########
+
+@import bourbon/bourbon
+@import config
+@import demo/mixins
+
+$sidebar-w    : 275px
+$yellow       : #F6AD20
+$brown        : #363218
+
+html
+  -webkit-font-smoothing: antialiased
+  font-smoothing: antialiased
+
+body
+  background: rgba(#FFEAAD, 0.2)
+  font-family: Oxygen
+  overflow-x: hidden
+  font-size: 12px
+  color: #606060
+
+  ::-moz-selection
+    background-color: rgba($yellow, .5)
+  ::selection
+    background-color: rgba($yellow, .5)
+
+#main
+  position: relative
+  min-height: 100vh
+  width: 100%
+
+h1,h2,h3,h4,ul,ol,body,li
+  padding: 0
+  margin: 0
+
+img
+  +user-select(none)
+  pointer-events: none
+
+a:not(#lukeed)
+  text-decoration:none
+  color:#56aee7
+  +transition(color 0.3s)
+  &:hover
+    color: #f6ad20
+
+h1
+  font-size: 4.5em
+  color: $brown
+  font-family: Ubuntu
+  font-weight: 500
+
+h2
+  font-weight: 400
+  font-size: 2.3em
+  color: $brown
+
+p.demo-text
+  +user-select(none)
+  color: rgba(40,44,42,.1)
+  font-weight: 900
+  font-size: 12em
+  line-height: 1
+  text-align: center
+  vertical-align: middle
+  padding: .8em 0
+  margin: 0
+
+#{$parent-class}
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+
+
+@import demo/home
+@import demo/lukeed
+@import demo/intro-text
+@import demo/effect-colors/*

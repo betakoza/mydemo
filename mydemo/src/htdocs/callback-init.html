@@ -1,0 +1,37 @@
+@@include('./-head.html')
+<body>
+
+  <div class="intro-text">
+    <h1>Callback: Init</h1>
+    <h3>Easily add a custom function to be run at Bee3D's startup.</h3>
+  </div>
+
+  <article class="example">
+    @@include('./-slides.html')
+    @@include('./-arrows.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="bee3D.js"></script>
+
+  <script>
+    var element = document.querySelector('.example');
+
+    var slider = new Bee3D(element, {
+      effect: 'arc',
+      listeners: {
+        keys: true
+      },
+      navigation: {
+        enabled: true
+      },
+      onInit: function(){
+        alert('Custom onInit callback function!')
+      }
+    });
+  </script>
+
+</body>
+</html>

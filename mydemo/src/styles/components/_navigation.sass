@@ -1,0 +1,30 @@
+// #
+// # Navigation Arrows
+// ###############
+
+#{$nav-class}
+  // @extend .icon
+  position: absolute
+  cursor: pointer
+  top: 50%
+  font-size: 8em
+  color: rgba(black,0.45)
+  +user-select(none)
+  +transition(color 0.7s ease)
+  +transform(translateY(-50%))
+
+  // remove
+  background-color: transparent
+  background-repeat: no-repeat
+  background-size: contain
+  width: 20px
+  height: 40px
+
+  &:hover
+    // color: rgba(black,.75)
+  &__prev
+    background-image: url('/assets/img/angle-left.svg')
+    left: 3%
+  &__next
+    background-image: url('/assets/img/angle-right.svg')
+    right: 3%

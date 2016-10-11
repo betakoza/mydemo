@@ -1,0 +1,42 @@
+@@include('./-head.html')
+<body>
+  
+  <div class="intro-text">
+    <h1>Autoplay: Extra Inputs</h1>
+    <h3>Autoplay's internal timer will reset after <u>every</u> slide change. You may use the navigation arrows, keyboard shortcuts, or touch swipes to navigate as normal.</h3>
+  </div>
+
+  <article class="example">
+    @@include('./-slides.html')
+    @@include('./-arrows.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="bee3D.js"></script>
+
+  <script>
+    var element = document.querySelector('.example');
+
+    var slider = new Bee3D(element, {
+      effect: 'carousel',
+      listeners: {
+        keys: true,
+        touches: true
+      },
+      navigation: {
+        enabled: true
+      },
+      autoplay: {
+      	enabled: true,
+        speed: 3000
+      },
+      loop: {
+        enabled: true
+      }
+    });
+  </script>
+
+</body>
+</html>

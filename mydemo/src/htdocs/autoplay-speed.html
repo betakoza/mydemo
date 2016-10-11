@@ -1,0 +1,31 @@
+@@include('./-head.html')
+<body>
+  
+  <div class="intro-text">
+    <h1>Autoplay: Custom Play Speed</h1>
+    <h3>You may modify the timer's duration. This is time, in `ms`, between slides.</h3>
+  </div>
+
+  <article class="example">
+    @@include('./-slides.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="bee3D.js"></script>
+
+  <script>
+    var element = document.querySelector('.example');
+
+    var slider = new Bee3D(element, {
+      effect: 'wave',
+      autoplay: {
+      	enabled: true,
+        speed: 1000
+      }
+    });
+  </script>
+
+</body>
+</html>

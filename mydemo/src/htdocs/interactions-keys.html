@@ -1,0 +1,34 @@
+@@include('./-head.html')
+<body>
+  
+  <div class="intro-text">
+    <h1>Interactions: Keys</h1>
+    <h3>
+      Press <u>PAGE DOWN</u>, <u>SPACEBAR</u> OR <u>RIGHT ARROW</u> keys on your keyboard to go to the <u>NEXT</u> slide.
+      <br>
+      Press <u>PAGE UP</u> OR <u>LEFT ARROW</u> keys on your keyboard to go to the <u>PREVIOUS</u> slide.
+    </h3>
+  </div>
+
+  <article class="example">
+    @@include('./-slides.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="bee3D.js"></script>
+
+  <script>
+    var element = document.querySelector('.example');
+
+    var slider = new Bee3D(element, {
+      effect: 'coverflow',
+      listeners: {
+        keys: true
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+@@include('./-head.html')
+<body>
+  <style>
+    #destroy {
+      position: absolute;
+      cursor: pointer;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      transform: translateX(-50%);
+      top: 40px;
+      outline: none;
+      box-shadow: none;
+      background: none;
+      display: block;
+      padding: 0.5em;
+      border-radius: 10px;
+      text-shadow: none;
+      border: 1px solid black;
+      z-index: 10;
+    }
+    #destroy p {
+      font-size: 3em;
+      color: rgba(40, 44, 42, 0.3);
+      padding: .5em .5em .25em;
+      font-weight: 900;
+      line-height: 1;
+    }
+    #destroy span {
+      font-family: Helvetica;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding-bottom: 0.75em;
+      display: block;
+    }
+  </style>
+
+  <div class="intro-text">
+    <h1>Callback: Destroy</h1>
+    <h3>Add a custom callback function when destroying the slider.</h3>
+  </div>
+
+  <button id="destroy">
+    <p>Destroy Slider</p>
+    <span>A new one will take its place</span>
+  </button>
+
+  <article class="example">
+    @@include('./-slides.html')
+    @@include('./-arrows.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="bee3D.js"></script>
+  
+  <script>
+    // possible effects
+    var effects = ['spiral-left', 'spiral-right', 'carousel', 'cube', 'classic', 'concave', 'wave', 'arc', 'coverflow'];
+    var el = document.querySelector('.example');
+
+    var slider = new Bee3D(el, {
+      // get random effect
+      effect: effects[ Math.floor(Math.random() * effects.length) ],
+      listeners: {
+        keys: true
+      },
+      navigation: {
+        enabled: true
+      },
+      onDestroy: function(){
+        alert('Custom onDestroy callback function!');
+        el.parentNode.innerHTML = '<p>Slider Deleted =O</p>'
+      }
+    });
+
+
+    document.getElementById('destroy').addEventListener('click', function(e){
+      e.preventDefault();
+      // call the destroy method on slider object
+      return slider.destroy();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+@@include('./-head.html')
+<body>
+  
+  <div class="intro-text">
+    <h1>Autoplay: Looped</h1>
+    <h3>You may enable the <u>infinite</u> and/or the <u>continuous</u> effect to make Autoplay play forever.</h3>
+  </div>
+
+  <article class="example">
+    @@include('./-slides.html')
+  </article>
+
+  <a id="lukeed" href="http://www.lukeed.com" rel="follow" target="_blank">LUKE'ED DESIGN<span></span></a>
+
+  <script src="dependencies/classie.js"></script>
+  <script src="bee3D.js"></script>
+
+  <script>
+    var element = document.querySelector('.example');
+
+    var slider = new Bee3D(element, {
+      effect: 'classic',
+      autoplay: {
+      	enabled: true
+      },
+      loop: {
+        enabled: true,
+        continuous: true
+      }
+    });
+  </script>
+
+</body>
+</html>

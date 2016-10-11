@@ -1,0 +1,26 @@
+// # 
+// # Spiral Left Effect
+// ######################
+
+#{$effect-class}__spiral-left 
+  overflow: hidden
+  
+  #{$base-class}
+    &--before
+      transform: translateX(-980px) rotateY(-72deg) translateX(-1290px) translate3d(0px, -600px, 0)
+      opacity: 0
+    &--before-2
+      transform: translateX(-590px) rotateY(-52deg) translateX(-780px) translate3d(0px, -400px, 0)
+      opacity: 0.3
+    &--before-1
+      transform: translateX(-270px) rotateY(-30deg) translateX(-290px) translate3d(0px, -200px, 0)
+      opacity: 0.5
+    &--after
+      transform: translateX(980px) rotateY(72deg) translateX(1290px) translate3d(0px, 600px, 0)
+      opacity: 0
+    &--after-1
+      transform: translateX(270px) rotateY(30deg) translateX(290px) translate3d(0px, 200px, 0)
+      opacity: 0.5
+    &--after-2
+      transform: translateX(590px) rotateY(52deg) translateX(780px) translate3d(0px, 400px, 0)
+      opacity: 0.3
